@@ -53,7 +53,7 @@
 		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
 	
-    
+    /*
     L.circle([51.0100, -114.0100], 1200, {
 		color: 'red',
 		fillColor: '#f03',
@@ -77,7 +77,14 @@
 	}
 
 	mymap.on('click', onMapClick);
- 
+ */
+	
+	$.getJSON("Census_by_Community_2019.geojson",function(data){
+           L.geoJson(data, {
+                style: polyStyle
+           }).addTo(mymap);
+});
+	
     
     
     // ----------- END SECTION (Markers, circles, polygons, & popups) ---------------- 
